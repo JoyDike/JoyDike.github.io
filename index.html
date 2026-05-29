@@ -30,22 +30,10 @@
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
     .nav-links a:hover { color: var(--text); }
-    .hero {
-      min-height: 100vh; display: flex; align-items: center;
-      padding: 100px 3rem 60px; max-width: 1200px; margin: 0 auto; position: relative;
-    }
-    .hero-glow {
-      position: absolute; width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(123,94,167,0.15) 0%, transparent 70%);
-      top: 50%; left: 60%; transform: translate(-50%, -50%); pointer-events: none;
-    }
+    .hero { min-height: 100vh; display: flex; align-items: center; padding: 100px 3rem 60px; max-width: 1200px; margin: 0 auto; position: relative; }
+    .hero-glow { position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(123,94,167,0.15) 0%, transparent 70%); top: 50%; left: 60%; transform: translate(-50%, -50%); pointer-events: none; }
     .hero-inner { max-width: 800px; position: relative; z-index: 1; }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: var(--font-mono); font-size: 12px; color: var(--green);
-      background: rgba(74,222,128,0.08); border: 1px solid rgba(74,222,128,0.2);
-      padding: 6px 16px; border-radius: 100px; margin-bottom: 2rem; letter-spacing: 0.05em;
-    }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 12px; color: var(--green); background: rgba(74,222,128,0.08); border: 1px solid rgba(74,222,128,0.2); padding: 6px 16px; border-radius: 100px; margin-bottom: 2rem; letter-spacing: 0.05em; }
     .hero-badge::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: blink 2s infinite; }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
     .hero h1 { font-family: var(--font-display); font-size: clamp(3.2rem, 7vw, 6.5rem); font-weight: 800; line-height: 1.0; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
@@ -78,8 +66,8 @@
     .tag-green { background: rgba(74,222,128,0.1); color: var(--green); border-color: rgba(74,222,128,0.2); }
     .card-title { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 0.6rem; line-height: 1.3; }
     .card-desc { font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 1.25rem; }
-    .card-footer { padding-top: 1rem; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
-    .card-link { font-size: 13px; font-weight: 600; color: var(--accent2); text-decoration: none; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
+    .card-footer { padding-top: 1rem; border-top: 1px solid var(--border); }
+    .card-link { font-size: 13px; font-weight: 600; color: var(--accent2); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; transition: color 0.2s; }
     .card-link:hover { color: var(--pink); }
     .skills-bg { background: var(--bg2); }
     .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
@@ -89,9 +77,26 @@
     .skill-name { font-family: var(--font-display); font-size: 15px; font-weight: 700; margin-bottom: 0.75rem; }
     .skill-pills { display: flex; flex-wrap: wrap; gap: 6px; }
     .skill-pill { font-family: var(--font-mono); font-size: 10px; padding: 4px 10px; border-radius: 100px; background: var(--bg3); color: var(--muted); border: 1px solid var(--border); }
+
+    /* CERTS */
+    .certs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; }
+    .cert-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; display: flex; gap: 1rem; align-items: flex-start; transition: border-color 0.3s; }
+    .cert-card:hover { border-color: rgba(123,94,167,0.3); }
+    .cert-icon { width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+    .cert-icon.done { background: rgba(74,222,128,0.12); }
+    .cert-icon.progress { background: rgba(244,114,182,0.12); }
+    .cert-info { flex: 1; }
+    .cert-name { font-weight: 600; font-size: 14px; color: var(--text); margin-bottom: 0.25rem; line-height: 1.3; }
+    .cert-org { font-size: 12px; color: var(--muted); margin-bottom: 0.5rem; }
+    .cert-badge { display: inline-flex; align-items: center; gap: 5px; font-family: var(--font-mono); font-size: 10px; padding: 3px 10px; border-radius: 100px; }
+    .cert-badge.done { background: rgba(74,222,128,0.1); color: var(--green); border: 1px solid rgba(74,222,128,0.2); }
+    .cert-badge.progress { background: rgba(244,114,182,0.1); color: var(--pink); border: 1px solid rgba(244,114,182,0.2); }
+
+    /* ABOUT */
     .about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: center; }
     .about-visual { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; }
-    .about-visual-inner { text-align: center; color: var(--muted); }
+    .about-visual img { width: 100%; height: 100%; object-fit: cover; }
+    .about-visual-inner { text-align: center; color: var(--muted); padding: 2rem; }
     .about-visual-inner svg { width: 60px; height: 60px; opacity: 0.25; margin-bottom: 1rem; }
     .about-visual-inner p { font-family: var(--font-mono); font-size: 12px; }
     .about-text p { font-size: 16px; color: var(--muted); line-height: 1.9; margin-bottom: 1.25rem; }
@@ -100,12 +105,15 @@
     .highlight-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.25rem; }
     .highlight-label { font-family: var(--font-mono); font-size: 10px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem; }
     .highlight-val { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--accent2); }
+
+    /* CONTACT */
     .contact-box { background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 5rem; text-align: center; position: relative; overflow: hidden; }
     .contact-box::before { content: ''; position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(123,94,167,0.12) 0%, transparent 70%); top: -200px; left: 50%; transform: translateX(-50%); pointer-events: none; }
     .contact-eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; }
     .contact-title { font-family: var(--font-display); font-size: clamp(2.2rem, 4.5vw, 3.8rem); font-weight: 800; line-height: 1.05; margin-bottom: 1.25rem; letter-spacing: -0.02em; }
     .contact-title span { background: linear-gradient(135deg, var(--accent2), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .contact-sub { color: var(--muted); font-size: 16px; margin-bottom: 3rem; }
+    .contact-sub { color: var(--muted); font-size: 16px; margin-bottom: 1rem; }
+    .contact-email { font-size: 18px; font-weight: 600; color: var(--accent2); margin-bottom: 2.5rem; }
     .contact-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
     footer { text-align: center; padding: 2.5rem; font-family: var(--font-mono); font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); }
     .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -125,6 +133,7 @@
   <ul class="nav-links">
     <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#certifications">Certifications</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -135,7 +144,7 @@
   <div class="hero-inner">
     <span class="hero-badge">Open to opportunities</span>
     <h1>Data tells<br><span class="line2">the story.</span><br>I decode it.</h1>
-    <p class="hero-sub">I'm <strong>Dike Joy Chika</strong> — a <strong>Data & Automation Analyst</strong> who transforms raw data into decisions, and manual processes into intelligent workflows. Power BI · SQL · Excel · n8n · AI.</p>
+    <p class="hero-sub">I'm <strong>Dike Joy Chika</strong> — a <strong>Data & Automation Analyst</strong> who transforms raw data into decisions and manual processes into intelligent workflows. Power BI · SQL · Excel · Python · n8n · AI.</p>
     <div class="hero-ctas">
       <a href="#projects" class="btn btn-accent">See my work <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       <a href="#contact" class="btn btn-ghost">Get in touch</a>
@@ -146,8 +155,8 @@
 <div class="stats">
   <div class="stats-inner">
     <div class="stat fade-up"><div class="stat-num">7</div><div class="stat-label">Projects built</div></div>
-    <div class="stat fade-up"><div class="stat-num">5</div><div class="stat-label">Tools mastered</div></div>
-    <div class="stat fade-up"><div class="stat-num">3</div><div class="stat-label">Industries covered</div></div>
+    <div class="stat fade-up"><div class="stat-num">6+</div><div class="stat-label">Tools mastered</div></div>
+    <div class="stat fade-up"><div class="stat-num">5</div><div class="stat-label">Industries covered</div></div>
     <div class="stat fade-up"><div class="stat-num">AI</div><div class="stat-label">Powered workflows</div></div>
   </div>
 </div>
@@ -162,7 +171,7 @@
       <div class="card-body">
         <div class="card-tags"><span class="tag tag-accent">Sales</span><span class="tag">Power BI</span></div>
         <h3 class="card-title">Sales Performance Analysis</h3>
-        <p class="card-desc">End-to-end sales dashboard for Lee Chatman Merchandise tracking $442K in revenue, 6,288 units sold across international & local markets. Includes location analysis across 15+ cities, age group segmentation, and product category breakdown.</p>
+        <p class="card-desc">End to end sales dashboard for Lee Chatman Merchandise tracking $442K in revenue and 6,288 units sold across international and local markets. Includes location analysis across 15 cities, age group segmentation and product category breakdown.</p>
         <div class="card-footer"><a href="https://github.com/JoyDike" target="_blank" class="card-link">GitHub ↗</a></div>
       </div>
     </div>
@@ -172,7 +181,7 @@
       <div class="card-body">
         <div class="card-tags"><span class="tag tag-accent">HR Analytics</span><span class="tag">Excel</span></div>
         <h3 class="card-title">Employee Demographics & Churn Analysis</h3>
-        <p class="card-desc">Analysed workforce data for 3,000 employees — uncovering attrition drivers by marital status, race, age group, and work type. 82% retention rate tracked across locations with gender and department breakdowns.</p>
+        <p class="card-desc">Analysed workforce data for 3,000 employees uncovering attrition drivers by marital status, race, age group and work type. 82% retention rate tracked across locations with gender and department breakdowns.</p>
         <div class="card-footer"><a href="https://github.com/JoyDike" target="_blank" class="card-link">GitHub ↗</a></div>
       </div>
     </div>
@@ -182,7 +191,7 @@
       <div class="card-body">
         <div class="card-tags"><span class="tag tag-accent">Healthcare</span><span class="tag">Power BI</span></div>
         <h3 class="card-title">Patient Visit & Emergency Care Dashboard</h3>
-        <p class="card-desc">4-page healthcare dashboard analysing 62,565 patient visits with 5.26-day avg stay. Covers arrival/discharge trends, diagnosis outcomes (Heart Attack, Migraine, Pneumonia), insurance providers, and emergency priority triage across 3 hospitals.</p>
+        <p class="card-desc">4 page healthcare dashboard analysing 62,565 patient visits with 5.26 day average stay. Covers arrival and discharge trends, diagnosis outcomes including Heart Attack, Migraine and Pneumonia, insurance providers and emergency priority triage across 3 hospitals.</p>
         <div class="card-footer"><a href="https://github.com/JoyDike" target="_blank" class="card-link">GitHub ↗</a></div>
       </div>
     </div>
@@ -192,7 +201,7 @@
       <div class="card-body">
         <div class="card-tags"><span class="tag tag-accent">Supply Chain</span><span class="tag">SQL Server</span></div>
         <h3 class="card-title">Supply Chain Performance Analysis</h3>
-        <p class="card-desc">Advanced SQL analysis of supply chain operations — covering delivery performance, order fulfilment rates, supplier analysis, shipping efficiency, and late delivery risk using CTEs, window functions, and complex joins.</p>
+        <p class="card-desc">Advanced SQL analysis of supply chain operations covering delivery performance, order fulfilment rates, supplier analysis, shipping efficiency and late delivery risk using CTEs, window functions and complex joins.</p>
         <div class="card-footer"><a href="https://github.com/JoyDike" target="_blank" class="card-link">GitHub ↗</a></div>
       </div>
     </div>
@@ -202,7 +211,7 @@
       <div class="card-body">
         <div class="card-tags"><span class="tag tag-accent">Business Intelligence</span><span class="tag">SQL Server</span></div>
         <h3 class="card-title">Business Questions SQL Analysis</h3>
-        <p class="card-desc">20 SQL queries from foundations to advanced — CTEs, window functions (RANK, LAG, FIRST_VALUE), Pareto ABC classification, recursive org hierarchy, rolling averages, churn detection, and month-over-month revenue growth.</p>
+        <p class="card-desc">20 SQL queries from foundations to advanced covering CTEs, window functions, Pareto ABC classification, recursive org hierarchy, rolling averages, churn detection and month over month revenue growth.</p>
         <div class="card-footer"><a href="https://github.com/JoyDike" target="_blank" class="card-link">GitHub ↗</a></div>
       </div>
     </div>
@@ -212,7 +221,7 @@
       <div class="card-body">
         <div class="card-tags"><span class="tag tag-green">Automation</span><span class="tag">n8n</span><span class="tag">Airtable</span><span class="tag">Paystack</span></div>
         <h3 class="card-title">Gym Management Automation System</h3>
-        <p class="card-desc">Built 4 automated workflows handling full gym member lifecycle — registration, photo upload to Cloudinary, 7-day & same-day expiry reminders via Gmail & Telegram, and subscription renewal via Paystack webhook.</p>
+        <p class="card-desc">Built 4 automated workflows handling the full gym member lifecycle including registration, photo upload to Cloudinary, 7 day and same day expiry reminders via Gmail and Telegram and subscription renewal via Paystack webhook.</p>
         <div class="card-footer"><a href="https://github.com/JoyDike" target="_blank" class="card-link">GitHub ↗</a></div>
       </div>
     </div>
@@ -221,8 +230,8 @@
       <img src="project6.png" class="card-img" alt="AI Email Classifier" />
       <div class="card-body">
         <div class="card-tags"><span class="tag tag-green">AI Automation</span><span class="tag">n8n</span><span class="tag">OpenAI</span><span class="tag">Gmail</span></div>
-        <h3 class="card-title">AI-Powered Email Classifier</h3>
-        <p class="card-desc">Automated email routing system using OpenAI to classify incoming emails by department (Sales, Finance, HR, Operations, Customer Service) and auto-label them in Gmail — zero manual sorting needed.</p>
+        <h3 class="card-title">AI Powered Email Classifier</h3>
+        <p class="card-desc">Automated email routing system using OpenAI to classify incoming emails by department including Sales, Finance, HR, Operations and Customer Service then auto label them in Gmail with zero manual sorting needed.</p>
         <div class="card-footer"><a href="https://github.com/JoyDike" target="_blank" class="card-link">GitHub ↗</a></div>
       </div>
     </div>
@@ -236,14 +245,61 @@
     <h2 class="section-title">Skills & <span>technologies</span></h2>
     <div class="skills-grid">
       <div class="skill-card fade-up"><div class="skill-icon">📊</div><div class="skill-name">Data Visualisation</div><div class="skill-pills"><span class="skill-pill">Power BI</span><span class="skill-pill">DAX</span><span class="skill-pill">Tableau</span><span class="skill-pill">Looker Studio</span></div></div>
-      <div class="skill-card fade-up"><div class="skill-icon">🗄️</div><div class="skill-name">Data & Databases</div><div class="skill-pills"><span class="skill-pill">SQL Server</span><span class="skill-pill">CTEs</span><span class="skill-pill">Window Functions</span><span class="skill-pill">Excel</span></div></div>
+      <div class="skill-card fade-up"><div class="skill-icon">🗄️</div><div class="skill-name">Data & Databases</div><div class="skill-pills"><span class="skill-pill">SQL Server</span><span class="skill-pill">CTEs</span><span class="skill-pill">Window Functions</span><span class="skill-pill">Excel</span><span class="skill-pill">Python</span></div></div>
       <div class="skill-card fade-up"><div class="skill-icon">⚡</div><div class="skill-name">Automation</div><div class="skill-pills"><span class="skill-pill">n8n</span><span class="skill-pill">Airtable</span><span class="skill-pill">Webhooks</span><span class="skill-pill">Zapier</span></div></div>
       <div class="skill-card fade-up"><div class="skill-icon">🤖</div><div class="skill-name">AI & Integrations</div><div class="skill-pills"><span class="skill-pill">OpenAI API</span><span class="skill-pill">Gmail API</span><span class="skill-pill">Telegram</span><span class="skill-pill">Paystack</span></div></div>
-      <div class="skill-card fade-up"><div class="skill-icon">🏥</div><div class="skill-name">Domain Expertise</div><div class="skill-pills"><span class="skill-pill">Healthcare Analytics</span><span class="skill-pill">HR Analytics</span><span class="skill-pill">Supply Chain</span><span class="skill-pill">Business Intelligence</span></div></div>
+      <div class="skill-card fade-up"><div class="skill-icon">🏥</div><div class="skill-name">Domain Expertise</div><div class="skill-pills"><span class="skill-pill">Healthcare Analytics</span><span class="skill-pill">HR Analytics</span><span class="skill-pill">Supply Chain</span><span class="skill-pill">Business Intelligence</span><span class="skill-pill">Sales Analytics</span></div></div>
       <div class="skill-card fade-up"><div class="skill-icon">📈</div><div class="skill-name">Analytics Methods</div><div class="skill-pills"><span class="skill-pill">Trend Analysis</span><span class="skill-pill">Churn Analysis</span><span class="skill-pill">Segmentation</span><span class="skill-pill">KPI Reporting</span></div></div>
     </div>
   </section>
 </div>
+
+<section id="certifications" class="section">
+  <p class="section-tag">Credentials</p>
+  <h2 class="section-title">Certifications & <span>learning</span></h2>
+  <div class="certs-grid">
+    <div class="cert-card fade-up">
+      <div class="cert-icon done">🎓</div>
+      <div class="cert-info">
+        <div class="cert-name">Google Data Analytics Certificate</div>
+        <div class="cert-org">Google via Coursera</div>
+        <span class="cert-badge done">✓ Completed</span>
+      </div>
+    </div>
+    <div class="cert-card fade-up">
+      <div class="cert-icon done">🤖</div>
+      <div class="cert-info">
+        <div class="cert-name">Google AI Essentials</div>
+        <div class="cert-org">Google via Coursera</div>
+        <span class="cert-badge done">✓ Completed</span>
+      </div>
+    </div>
+    <div class="cert-card fade-up">
+      <div class="cert-icon done">🌟</div>
+      <div class="cert-info">
+        <div class="cert-name">Tefem Mentorship Programme</div>
+        <div class="cert-org">Tefem</div>
+        <span class="cert-badge done">✓ Completed</span>
+      </div>
+    </div>
+    <div class="cert-card fade-up">
+      <div class="cert-icon progress">⚡</div>
+      <div class="cert-info">
+        <div class="cert-name">AI & Automation Programme</div>
+        <div class="cert-org">TSAcademy</div>
+        <span class="cert-badge progress">In Progress</span>
+      </div>
+    </div>
+    <div class="cert-card fade-up">
+      <div class="cert-icon progress">📊</div>
+      <div class="cert-info">
+        <div class="cert-name">PL 300 Power BI Data Analyst</div>
+        <div class="cert-org">Microsoft</div>
+        <span class="cert-badge progress">Expected Aug 2025</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="about" class="section">
   <p class="section-tag">Background</p>
@@ -252,14 +308,14 @@
     <div class="about-visual fade-up">
       <div class="about-visual-inner">
         <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="32" cy="22" r="12"/><path d="M8 56c0-13.255 10.745-24 24-24s24 10.745 24 24"/></svg>
-        <p>Add your photo here</p>
+        <p>Upload profile.jpg to GitHub to display your photo here</p>
       </div>
     </div>
     <div class="about-text fade-up">
-      <p>I'm <strong>Dike Joy Chika</strong>, a Lagos-based <strong>Data & Automation Analyst</strong> with a passion for turning complex data into clear, actionable stories — and for automating the repetitive work that slows teams down.</p>
-      <p>My work sits at the intersection of <strong>business intelligence and intelligent automation</strong>. I build Power BI dashboards that executives actually use, write SQL that digs deep into business questions, and design n8n workflows that connect tools and eliminate manual tasks.</p>
-      <p>I have a particular focus on <strong>healthcare analytics</strong> — I believe data holds the power to improve patient outcomes and operational efficiency in ways that directly impact lives.</p>
-      <p>Currently open to <strong>full-time analyst roles and freelance projects</strong>. If you have data that needs making sense of — or a workflow that needs automating — let's talk.</p>
+      <p>I'm <strong>Dike Joy Chika</strong>, a Lagos based <strong>Data & Automation Analyst</strong> with a passion for turning complex data into clear actionable stories and for automating the repetitive work that slows teams down.</p>
+      <p>My work sits at the intersection of <strong>business intelligence and intelligent automation</strong>. I build Power BI dashboards that executives actually use, write SQL that digs deep into business questions and design n8n workflows that connect tools and eliminate manual tasks.</p>
+      <p>I have a particular focus on <strong>healthcare analytics</strong> because I believe data holds the power to improve patient outcomes and operational efficiency in ways that directly impact lives.</p>
+      <p>Currently open to <strong>full time analyst roles and freelance projects</strong>. If you have data that needs making sense of or a workflow that needs automating, let's talk.</p>
       <div class="about-highlights">
         <div class="highlight-item"><div class="highlight-label">Location</div><div class="highlight-val">Lagos, Nigeria</div></div>
         <div class="highlight-item"><div class="highlight-label">Specialisation</div><div class="highlight-val">Healthcare & BI</div></div>
@@ -274,16 +330,17 @@
   <div class="contact-box fade-up">
     <p class="contact-eyebrow">Let's work together</p>
     <h2 class="contact-title">Got data that needs<br><span>making sense of?</span></h2>
-    <p class="contact-sub">Open to full-time roles, freelance projects, and collaborations across Africa and beyond.</p>
+    <p class="contact-sub">Open to full time roles, freelance projects and collaborations across Africa and beyond.</p>
+    <p class="contact-email">dikehjoy21@gmail.com</p>
     <div class="contact-btns">
-      <a href="mailto:dikehjoy21@gmail.com" class="btn btn-accent">Email me <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+      <a href="mailto:dikehjoy21@gmail.com" class="btn btn-accent">Send me an email <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
       <a href="https://www.linkedin.com/in/dike-joy5224/" target="_blank" class="btn btn-ghost">LinkedIn ↗</a>
       <a href="https://github.com/JoyDike" target="_blank" class="btn btn-ghost">GitHub ↗</a>
     </div>
   </div>
 </section>
 
-<footer><p>Designed & built by Dike Joy Chika &nbsp;·&nbsp; Hosted on GitHub Pages &nbsp;·&nbsp; © 2025</p></footer>
+<footer><p>Designed and built by Dike Joy Chika &nbsp; Hosted on GitHub Pages &nbsp; © 2025</p></footer>
 
 <script>
   const io = new IntersectionObserver((entries) => {
